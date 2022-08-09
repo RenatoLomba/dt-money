@@ -21,6 +21,7 @@ export const Button = styled.button<ButtonProps>`
       ? '0.75rem 1.25rem'
       : '1rem 2rem'};
     font-size: ${size === 'sm' ? theme.fontSizes.sm : theme.fontSizes.md};
+    font-weight: ${theme.fontWeights.bold};
 
     display: flex;
     justify-content: center;
