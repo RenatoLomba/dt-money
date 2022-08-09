@@ -1,8 +1,11 @@
+import { MagnifyingGlass } from 'phosphor-react'
 import { FC } from 'react'
 
+import { Button } from '../../components/button'
 import { Header } from '../../components/header'
+import { Input } from '../../components/input'
 import { Summary } from '../../components/summary'
-import { TransactionsContainer, TransactionsTable } from './styles'
+import { SearchForm, TransactionsContainer, TransactionsTable } from './styles'
 
 export const TransactionsPage: FC = () => {
   return (
@@ -12,6 +15,14 @@ export const TransactionsPage: FC = () => {
       <Summary />
 
       <TransactionsContainer>
+        <SearchForm>
+          <Input type="text" placeholder="Busque por transações" />
+          <Button type="submit" outlined>
+            <MagnifyingGlass size={20} />
+            <span>Buscar</span>
+          </Button>
+        </SearchForm>
+
         <TransactionsTable>
           <tbody>
             <tr>

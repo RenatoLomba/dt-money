@@ -40,3 +40,14 @@ export const TransactionsTable = styled.table`
     }
   }
 `
+
+export const SearchForm = styled.form`
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+
+  button {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+`
