@@ -9,21 +9,23 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors['green-500']};
   }
 
   ::selection {
-    background: ${(props) => props.theme['green-300']};
-    color: ${(props) => props.theme.white};
+    background: ${(props) => props.theme.colors['green-300']};
+    color: ${(props) => props.theme.colors.white};
   }
 
   body {
-    background: ${(props) => props.theme['gray-800']};
-    color: ${(props) => props.theme['gray-100']};
+    background: ${(props) => props.theme.colors['gray-800']};
+    color: ${(props) => props.theme.colors['gray-100']};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
-    font: 400 1rem 'Roboto', sans-serif;
+    font: ${({ theme }) =>
+      `${theme.fontWeights.regular} ${theme.fontSizes.md} ${theme.fontFamilies.roboto}`};
+    line-height: 1.6;
   }
 `
