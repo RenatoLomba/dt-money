@@ -3,10 +3,13 @@ import styled, { css } from 'styled-components'
 type ButtonProps = {
   outlined?: boolean
   size?: 'sm' | 'md' | 'lg'
+  fullWidth?: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ outlined = false, size = 'md', theme }) => css`
+  ${({ outlined = false, size = 'md', fullWidth = false, theme }) => css`
+    ${fullWidth && 'width: 100%;'}
+
     background: ${outlined ? 'transparent' : theme.colors['green-500']};
     border: 1px solid;
     border-color: ${outlined ? theme.colors['green-300'] : 'transparent'};
