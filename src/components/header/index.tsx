@@ -41,11 +41,11 @@ export const Header = () => {
                 <Input type="text" placeholder="Categoria" />
 
                 <TransactionType>
-                  <TransactionTypeButton type="button" variant="input">
+                  <TransactionTypeButton value="input" variant="input">
                     <ArrowCircleUp size={32} />
                     <span>Entrada</span>
                   </TransactionTypeButton>
-                  <TransactionTypeButton type="button" variant="output">
+                  <TransactionTypeButton value="output" variant="output">
                     <ArrowCircleDown size={32} />
                     <span>Saída</span>
                   </TransactionTypeButton>

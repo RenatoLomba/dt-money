@@ -31,6 +31,10 @@ export const Button = styled.button<ButtonProps>`
     cursor: pointer;
     transition: all 0.2s ease;
 
+    &:focus {
+      box-shadow: 0 0 0 2px ${theme.colors['green-300']};
+    }
+
     &:hover {
       background: ${outlined
         ? theme.colors['green-500']
