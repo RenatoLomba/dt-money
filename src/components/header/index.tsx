@@ -1,4 +1,4 @@
-import { X } from 'phosphor-react'
+import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -10,6 +10,8 @@ import {
   HeaderContent,
   ModalContent,
   ModalOverlay,
+  TransactionType,
+  TransactionTypeButton,
 } from './styles'
 
 export const Header = () => {
@@ -37,6 +39,17 @@ export const Header = () => {
                 <Input type="text" placeholder="Descrição" />
                 <Input type="number" placeholder="Preço" />
                 <Input type="text" placeholder="Categoria" />
+
+                <TransactionType>
+                  <TransactionTypeButton type="button" variant="input">
+                    <ArrowCircleUp size={32} />
+                    <span>Entrada</span>
+                  </TransactionTypeButton>
+                  <TransactionTypeButton type="button" variant="output">
+                    <ArrowCircleDown size={32} />
+                    <span>Saída</span>
+                  </TransactionTypeButton>
+                </TransactionType>
 
                 <Button type="submit" size="lg" fullWidth>
                   Cadastrar

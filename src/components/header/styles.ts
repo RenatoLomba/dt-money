@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -60,4 +60,54 @@ export const CloseButton = styled(Dialog.Close)`
 
   cursor: pointer;
   color: ${(props) => props.theme.colors['gray-500']};
+`
+
+export const TransactionType = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+`
+
+type TransactionTypeButtonProps = {
+  variant?: 'input' | 'output'
+  selected?: boolean
+}
+
+export const TransactionTypeButton = styled.button<TransactionTypeButtonProps>`
+  ${({ variant = 'input', selected, theme }) => css`
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background: ${selected
+      ? variant === 'input'
+        ? theme.colors['green-500']
+        : theme.colors['red-500']
+      : theme.colors['gray-700']};
+
+    color: ${selected ? theme.colors.white : theme.colors['gray-300']};
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    svg {
+      color: ${selected
+        ? theme.colors.white
+        : variant === 'input'
+        ? theme.colors['green-500']
+        : theme.colors['red-500']};
+    }
+
+    ${!selected &&
+    css`
+      &:hover {
+        background: ${(props) => props.theme.colors['gray-600']};
+      }
+    `}
+  `}
 `
